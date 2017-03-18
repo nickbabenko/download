@@ -1,0 +1,41 @@
+@import '../../node_modules/retinajs/src/_retina.scss';
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+header {
+    background: #4395F5;
+    height: 100px;
+    display: block;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            float: left;
+            width: 100px;
+            height: 100px;
+
+            &.add {
+                @include retina('/img/header/add_icon.png', 2, 40px 40px, center center no-repeat);
+            }
+        }
+
+        &.right {
+            float: right;
+        }
+    }
+}
+
+.container {
+    flex: 1;
+}
