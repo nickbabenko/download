@@ -1,13 +1,11 @@
 const Client = require('node-torrent');
-const sqlite3 = require('sqlite3').verbose();
+import * as sqlite3 from 'sqlite3';
 
-class DownloadManager {
+export class DownloadManager {
 
-    constructor() {
-        this._client = new Client({ logLevel: 'DEBUG' });
-        this._db = new sqlite3.Database(__dirname + '/../config/download.sqlite3', () => this.createTable());
-        this._torrents = [];
-    }
+    private _client = new Client({ logLevel: 'DEBUG' });
+    private _db = new sqlite3.Database(__dirname + '/../config/download.sqlite3', () => this.createTable());
+    private _torrents:any[] = [];
 
     createTable() {
         this._db.run(require('../static/sql/structure.sql'), () => this.loadCurrentDownloads());
@@ -24,14 +22,12 @@ class DownloadManager {
         });
     }
 
-    addDownload(magnetUrl) {
-        this.addDownloadWithUrl(url);
+    addDownload(magnetUrl:string) {
+        this.addDownloadWithUrl(magnetUrl);
     }
 
-    addDownloadWithUrl(url) {
+    addDownloadWithUrl(url:string) {
         this._torrents.push(this._client.addTorrent(url));
     }
 
 }
-
-module.exports = DownloadManager;

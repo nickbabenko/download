@@ -1,0 +1,13 @@
+.btn {
+    background: $blue;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    padding: 0 15px;
+    line-height: 30px;
+
+    &.cancel {
+        background: none;
+        color: #919191;
+    }
+}

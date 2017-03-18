@@ -10,6 +10,14 @@
     "node-torrent": "git@github.com:nickbabenko/node-torrent.git",
     "socket.io": "^1.7.3",
     "sqlite3": "^3.1.8",
+    "typescript": "^2.2.1",
     "winston": "^2.3.1"
+  },
+  "scripts": {
+    "watch": "npm-watch",
+    "start": "tsc && node dist/index.js"
+  },
+  "watch": {
+    "start": "{src/*.js,static/*}"
   }
 }

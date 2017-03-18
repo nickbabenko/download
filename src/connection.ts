@@ -1,14 +1,21 @@
-const EventEmitter = require('events');
+import {EventEmitter} from 'events';
 
-class Connection extends EventEmitter {
+export class Connection extends EventEmitter {
 
     static get EVENT_DISCONNECTED() { return 'connection.disconnected'; }
 
-    constructor(socket) {
+    private _socket:SocketIO.Socket;
+
+    constructor(socket:SocketIO.Socket) {
+        super();
         this._socket = socket;
 
         this.listenForSocketClosed();
         this.sendDownloadList();
+    }
+
+    get id():string {
+        return this._socket.id;
     }
 
     listenForSocketClosed() {
@@ -22,5 +29,3 @@ class Connection extends EventEmitter {
     }
 
 }
-
-module.exports = Connection;

@@ -1,4 +1,9 @@
 @import '../../node_modules/retinajs/src/_retina.scss';
+@import './global';
+@import './button';
+@import './form';
+@import './modal/index';
+@import './modal/add';
 
 body, html {
     margin: 0;
@@ -7,10 +12,12 @@ body, html {
 
 body {
     display: flex;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
 }
 
 header {
-    background: #4395F5;
+    background: $blue;
     height: 100px;
     display: block;
     width: 100%;

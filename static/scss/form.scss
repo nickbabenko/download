@@ -1,0 +1,11 @@
+form {
+    .controls {
+        text-align: right;
+
+        .btn {
+            &.cancel {
+                float: left;
+            }
+        }
+    }
+}

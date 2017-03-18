@@ -11,3 +11,14 @@ html
                 li.play
                 li.pause
         .container
+        #modal-add.modal.add
+            .title
+                h4 Add Torrent
+                a.close
+            .content
+                form
+                    p Enter the Magnet URL for your torrent:
+                    input(name=url)
+                    .controls
+                        button(type=button).btn.add Add
+                        button(type=button).btn.cancel Cancel
