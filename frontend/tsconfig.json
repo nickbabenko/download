@@ -5,19 +5,12 @@
         "emitDecoratorMetadata": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "outDir": "dist",
         "sourceMap": true,
         "declaration": true,
         "inlineSources": true,
         "strictNullChecks": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "noImplicitReturns": true,
-        "typeRoots": ["./typings"]
-    },
-    "exclude": [
-        "node_modules",
-        "dist",
-        "frontend"
-    ]
+        "noImplicitReturns": true
+    }
 }

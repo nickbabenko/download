@@ -1,4 +1,4 @@
-const Client = require('node-torrent');
+import {Client} from 'node-torrent';
 import * as sqlite3 from 'sqlite3';
 
 export class DownloadManager {

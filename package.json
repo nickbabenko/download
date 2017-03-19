@@ -2,10 +2,13 @@
   "name": "download",
   "version": "0.0.1",
   "main": "index.js",
+  "typings": "./typings",
   "dependencies": {
+    "@types/jquery": "^2.0.41",
     "express": "^4.15.2",
     "express-less": "^0.1.0",
     "jade": "^1.11.0",
+    "jquery": "^3.2.0",
     "node-sass-middleware": "^0.11.0",
     "node-torrent": "git@github.com:nickbabenko/node-torrent.git",
     "socket.io": "^1.7.3",
@@ -19,5 +22,13 @@
   },
   "watch": {
     "start": "{src/*.js,static/*}"
+  },
+  "devDependencies": {
+    "@types/typescript": "^2.0.0",
+    "@types/webpack": "^2.2.11",
+    "@types/webpack-dev-middleware": "^1.9.1",
+    "ts-loader": "^2.0.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1"
   }
 }

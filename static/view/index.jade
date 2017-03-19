@@ -3,7 +3,7 @@ html
         title Download
         link(rel="stylesheet",  href="/css/app.css")
     body
-        header
+        header(data-bind="header")
             ul.left
                 li.add
                 li.delete
@@ -18,7 +18,8 @@ html
             .content
                 form
                     p Enter the Magnet URL for your torrent:
-                    input(name=url)
+                    input(name="url")
                     .controls
-                        button(type=button).btn.add Add
-                        button(type=button).btn.cancel Cancel
+                        button(type='button').btn.add Add
+                        button(type='button').btn.cancel Cancel
+        script(type='text/javascript', src='/js/app.js')

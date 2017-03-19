@@ -2,6 +2,8 @@ import * as express from 'express';
 import * as http from 'http';
 import * as io from 'socket.io';
 import * as winston from 'winston';
+import * as webpack from 'webpack';
+import {WebpackDevMiddleware} from 'webpack-dev-middleware';
 import {ConnectionManager} from './connection_manager';
 import {Config} from './config.interface';
 
@@ -37,6 +39,7 @@ export class Listener {
         this._app.set('view engine', 'jade');
         this._app.set('views', __dirname + '/../../static/view');
         this._app.use('/img', express.static(__dirname + '/../../static/public/img'));
+        this._app.use('/js', express.static(__dirname + '/../../static/public/js'));
         this._app.use(sassMiddleware({
             src: __dirname + '/../../static/scss',
             dest: __dirname + '/../../static/css',
@@ -44,6 +47,7 @@ export class Listener {
             outputStyle: 'compressed',
             prefix: '/css'
         }));
+        //this._app.use(WebpackDevMiddleware(webpack(require('../frontend/webpack.config'), {}));
         this._app.get('/', (req:express.Request, res:express.Response) => {
             res.render('index.jade');
         });
